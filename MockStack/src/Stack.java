@@ -37,8 +37,11 @@ public class Stack<E> implements StackADT{
      * @return the last inserted element
      */
     public E pop() throws EmptyStackException{
-        //TODO
-        return null;
+        if(stackIndex == 0) {
+            throw new EmptyStackException();
+        }else{
+            return array[--stackIndex];
+        }
     }
 
     /**
