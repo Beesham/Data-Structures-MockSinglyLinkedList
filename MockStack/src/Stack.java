@@ -8,10 +8,12 @@ import java.util.EmptyStackException;
 public class Stack<E> implements StackADT{
 
     private E array[];
-    private int sizeOfStack = 0;
+    private int sizeOfStack;
+    private final int INIT_SIZE_OF_ARRAY = 5;
 
     public Stack() {
         //Empty Constructor
+        sizeOfStack = INIT_SIZE_OF_ARRAY;
     }
 
     /**
