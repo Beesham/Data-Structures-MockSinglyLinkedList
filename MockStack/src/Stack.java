@@ -7,21 +7,28 @@ import java.util.EmptyStackException;
  */
 public class Stack<E> implements StackADT{
 
-    private E array[];
+    private E[] array;
     private int sizeOfStack;
     private final int INIT_SIZE_OF_ARRAY = 5;
 
+    private int stackIndex;
+
     public Stack() {
-        //Empty Constructor
         sizeOfStack = INIT_SIZE_OF_ARRAY;
+        array = (E[]) new Object[sizeOfStack]; //Cast to E since java does not allow for new array with generics
+        stackIndex = sizeOfStack - 1;
     }
 
     /**
      * Inserts an element
      * @param object object to be added to top of stack
      */
-    public void push(Object object) {
-     //TODO
+    public void push(Object object) throws Exception {
+        if(!(size() == sizeOfStack)) {
+            array[stackIndex] = (E) object;
+        }else{
+            throw new Exception("FullStackException");
+        }
     }
 
     /**

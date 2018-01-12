@@ -1,9 +1,9 @@
 import java.util.EmptyStackException;
 
-public interface StackADT {
-    void push(Object o);
-    Object pop() throws EmptyStackException;
-    Object top() throws EmptyStackException;
+public interface StackADT<E> {
+    void push(E o) throws Exception;
+    E pop() throws EmptyStackException;
+    E top() throws EmptyStackException;
     int size();
     boolean isEmpty();
 }
