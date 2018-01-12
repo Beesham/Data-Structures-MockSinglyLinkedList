@@ -7,14 +7,20 @@ public class MainActivity {
             System.out.print(myStack.size());
             myStack.push("a");
             System.out.print(myStack.size());
+            System.out.print(myStack.top());
             myStack.push("b");
             System.out.print(myStack.size());
+            System.out.print(myStack.top());
             myStack.push("c");
             System.out.print(myStack.size());
+            System.out.print(myStack.top());
             myStack.push("d");
             System.out.print(myStack.size());
+            System.out.print(myStack.top());
             myStack.push("e");
             System.out.print(myStack.size());
+            System.out.print(myStack.top());
+
             //myStack.push("f"); //Uncomment to test overflow
 
 

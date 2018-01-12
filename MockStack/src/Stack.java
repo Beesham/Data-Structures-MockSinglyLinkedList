@@ -51,8 +51,11 @@ public class Stack<E> implements StackADT{
      * @return object
      */
     public E top() throws EmptyStackException{
-        //TODO
-        return null;
+        if(stackCount == 0) {
+            throw new EmptyStackException();
+        }else{
+            return array[stackCount - 1];
+        }
     }
 
     /**
