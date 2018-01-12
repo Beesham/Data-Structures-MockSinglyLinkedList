@@ -16,7 +16,7 @@ public class Stack<E> implements StackADT{
     public Stack() {
         sizeOfStack = INIT_SIZE_OF_ARRAY;
         array = (E[]) new Object[sizeOfStack]; //Cast to E since java does not allow for new array with generics
-        stackIndex = sizeOfStack - 1;
+        stackIndex = 0;
     }
 
     /**
@@ -24,8 +24,9 @@ public class Stack<E> implements StackADT{
      * @param object object to be added to top of stack
      */
     public void push(Object object) throws Exception {
-        if(!(size() == sizeOfStack)) {
+        if(stackIndex != size()) {
             array[stackIndex] = (E) object;
+            stackIndex++;
         }else{
             throw new Exception("FullStackException");
         }
@@ -54,8 +55,7 @@ public class Stack<E> implements StackADT{
      * @return size of stack
      */
     public int size() {
-        //TODO
-        return sizeOfStack;
+        return array.length;
     }
 
     /**
