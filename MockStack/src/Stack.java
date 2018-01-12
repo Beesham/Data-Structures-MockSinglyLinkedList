@@ -1,3 +1,4 @@
+import java.util.Arrays;
 import java.util.EmptyStackException;
 
 /**
@@ -28,7 +29,9 @@ public class Stack<E> implements StackADT{
             array[stackCount] = (E) object;
             stackCount++;
         }else{
-            throw new Exception("FullStackException");
+            expandArray();
+            push(object);
+            //throw new Exception("FullStackException");
         }
     }
 
@@ -72,6 +75,14 @@ public class Stack<E> implements StackADT{
      */
     public boolean isEmpty() {
         return size() == 0 ? true : false;
+    }
+
+    private void expandArray() {
+        sizeOfStackArray = sizeOfStackArray + INIT_SIZE_OF_ARRAY;
+        E[] newArray = (E[]) new Object[sizeOfStackArray];
+        newArray = Arrays.copyOf(array, sizeOfStackArray);
+        array = (E[]) new Object[sizeOfStackArray];
+        array = Arrays.copyOf(newArray, sizeOfStackArray);
     }
 
 }

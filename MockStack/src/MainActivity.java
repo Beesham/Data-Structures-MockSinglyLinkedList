@@ -21,7 +21,9 @@ public class MainActivity {
             System.out.print(myStack.size());
             System.out.print(myStack.top());
 
-            //myStack.push("f"); //Uncomment to test overflow
+            myStack.push("f");
+            System.out.print(myStack.size());
+            System.out.print(myStack.top());
 
 
             System.out.print(myStack.pop());
@@ -29,7 +31,7 @@ public class MainActivity {
             System.out.print(myStack.pop());
             System.out.print(myStack.pop());
             System.out.print(myStack.pop());
-
+            System.out.print(myStack.pop());
             //System.out.print(myStack.pop()); //Uncomment to test underflow
 
 
