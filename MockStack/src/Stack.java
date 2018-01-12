@@ -1,7 +1,7 @@
 import java.util.EmptyStackException;
 
 /**
- *
+ * Stack implementation on an array
  * @param <E>
  * @author Beesham
  */
@@ -71,8 +71,7 @@ public class Stack<E> implements StackADT{
      * @return true: empty otherwise false
      */
     public boolean isEmpty() {
-        //TODO
-        return false;
+        return size() == 0 ? true : false;
     }
 
 }
