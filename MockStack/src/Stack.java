@@ -77,10 +77,12 @@ public class Stack<E> implements StackADT{
         return size() == 0 ? true : false;
     }
 
+    /**
+     * Expands the size of the array as Stack needs
+     */
     private void expandArray() {
         sizeOfStackArray = sizeOfStackArray + INIT_SIZE_OF_ARRAY;
-        E[] newArray = (E[]) new Object[sizeOfStackArray];
-        newArray = Arrays.copyOf(array, sizeOfStackArray);
+        E[] newArray = Arrays.copyOf(array, sizeOfStackArray);
         array = (E[]) new Object[sizeOfStackArray];
         array = Arrays.copyOf(newArray, sizeOfStackArray);
     }
