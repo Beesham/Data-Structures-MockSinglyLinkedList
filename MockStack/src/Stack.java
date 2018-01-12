@@ -8,15 +8,15 @@ import java.util.EmptyStackException;
 public class Stack<E> implements StackADT{
 
     private E[] array;
-    private int sizeOfStack;
+    private int sizeOfStackArray;    //Size of the array (Stack)
     private final int INIT_SIZE_OF_ARRAY = 5;
 
-    private int stackIndex;
+    private int stackCount; //Keeps a count of the elements in the stack
 
     public Stack() {
-        sizeOfStack = INIT_SIZE_OF_ARRAY;
-        array = (E[]) new Object[sizeOfStack]; //Cast to E since java does not allow for new array with generics
-        stackIndex = 0;
+        sizeOfStackArray = INIT_SIZE_OF_ARRAY;
+        array = (E[]) new Object[sizeOfStackArray]; //Cast to E since java does not allow for new array with generics
+        stackCount = 0;
     }
 
     /**
@@ -24,9 +24,9 @@ public class Stack<E> implements StackADT{
      * @param object object to be added to top of stack
      */
     public void push(Object object) throws Exception {
-        if(stackIndex != size()) {
-            array[stackIndex] = (E) object;
-            stackIndex++;
+        if(stackCount != sizeOfStackArray) {
+            array[stackCount] = (E) object;
+            stackCount++;
         }else{
             throw new Exception("FullStackException");
         }
@@ -37,10 +37,10 @@ public class Stack<E> implements StackADT{
      * @return the last inserted element
      */
     public E pop() throws EmptyStackException{
-        if(stackIndex == 0) {
+        if(stackCount == 0) {
             throw new EmptyStackException();
         }else{
-            return array[--stackIndex];
+            return array[--stackCount];
         }
     }
 
@@ -58,7 +58,7 @@ public class Stack<E> implements StackADT{
      * @return size of stack
      */
     public int size() {
-        return array.length;
+        return stackCount;
     }
 
     /**
