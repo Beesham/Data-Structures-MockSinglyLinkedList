@@ -40,7 +40,9 @@ public class Stack<E> implements StackADT{
         if(stackCount == 0) {
             throw new EmptyStackException();
         }else{
-            return array[--stackCount];
+            E o = array[--stackCount];
+            array[stackCount] = null;
+            return o;
         }
     }
 
