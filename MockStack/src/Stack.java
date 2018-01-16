@@ -31,7 +31,6 @@ public class Stack<E> implements StackADT{
         }else{
             expandArray();
             push(object);
-            //throw new Exception("FullStackException");
         }
     }
 
