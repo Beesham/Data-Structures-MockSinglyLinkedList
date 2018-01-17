@@ -24,6 +24,10 @@ public class MainActivity {
 				'0','1','2','3','4','5','6','7','8','9','+','-','*','/'
 		};
 
+		if(checkForUnknownChars(s, CONST_SYMBOLS)) {
+			System.out.println("FOUND_UNKNOWN_CHAR");
+		}else System.out.println("ALL_GOOD");
+
 
 		for(int i = 0; i < lengthOfString; i++) {
 			try {
@@ -53,8 +57,30 @@ public class MainActivity {
 
     }
 
-    private void checkForUnknownChars(String s, String[] validList) {
+	/**
+	 * Checks for unknown characters in a string against a given data set
+	 * @param s the string to check
+	 * @param validList the list to check against
+	 * @return true if a mis-match is found
+	 */
+    private static boolean checkForUnknownChars(String s, char[] validList) {
 
+    	final boolean FOUND_UNKNOWN_CHAR = true;
+    	boolean foundFlag;
+
+
+    	for(int i = 0; i < s.length(); i++) {
+    		foundFlag = false;
+    		for(int j = 0; j < validList.length; j++) {
+    			if(s.charAt(i) == validList[j]) {
+    				j = validList.length;
+    				foundFlag = true;
+				}
+			    if(j == validList.length - 1 && foundFlag == false) return FOUND_UNKNOWN_CHAR;
+    		}
+		}
+
+    	return false;
 	}
 
     private void testStack() {
