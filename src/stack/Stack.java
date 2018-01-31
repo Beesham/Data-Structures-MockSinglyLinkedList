@@ -17,8 +17,6 @@ public class Stack<E> implements StackADT{
     private int stackCount; //Keeps a count of the elements in the stack
 
     public Stack() {
-        sizeOfStackArray = INIT_SIZE_OF_ARRAY;
-        //array = (E[]) new Object[sizeOfStackArray]; //Cast to E since java does not allow for new array with generics
         list = new SinglyLinkedList<>();
         stackCount = 0;
     }
@@ -40,7 +38,12 @@ public class Stack<E> implements StackADT{
         if(stackCount == 0) {
             throw new EmptyStackException();
         }else{
-            return (E) list.getFirst();
+            try {
+                return (E) list.removeFirst();
+            } catch (Exception e) {
+                e.printStackTrace();
+                throw new EmptyStackException();
+            }
         }
     }
 
