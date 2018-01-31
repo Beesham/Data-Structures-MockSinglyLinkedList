@@ -8,6 +8,13 @@ public class Tester {
 
 		System.out.println(list.getFirst());
 		System.out.println(list.getLast());
+		try {
+			System.out.println(list.removeFirst());
+		} catch (Exception e) {
+			e.printStackTrace();
+			System.out.println("Empty list");
+		}
+		System.out.println(list.getFirst());
 		System.out.println(list.size());
 	}
 }

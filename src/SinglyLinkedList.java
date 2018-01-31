@@ -34,8 +34,13 @@ public class SinglyLinkedList<E> implements LinkedListADT {
 	}
 
 	@Override
-	public void removeFirst() {
-		//TODO
+	public Object removeFirst() throws Exception {
+		if(head == null) throw new Exception("Empty list");
+		Node n = head;
+		head = head.getNext();
+
+		size--;
+		return n.getO();
 	}
 
 	@Override
