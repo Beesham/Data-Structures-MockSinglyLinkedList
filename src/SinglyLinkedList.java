@@ -43,10 +43,12 @@ public class SinglyLinkedList<E> implements LinkedListADT {
 		return n.getO();
 	}
 
+	//O(n)
 	@Override
 	public Object removeLast() throws Exception {
 		if(head == null) throw new Exception("Empty list");
 
+		//Traverse the list to the second to last element
 		Node tmp = head;
 		for(int i = 0; i < size - 2; i++) {
 			tmp = tmp.getNext();
