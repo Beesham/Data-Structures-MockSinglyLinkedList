@@ -5,14 +5,32 @@ public class SinglyLinkedList<E> implements LinkedListADT {
 	 */
 	private int size = 0;
 
+	/*
+	Head of list
+	 */
+	private Node head;
+
+	/*
+	Tail of list
+	 */
+	private Node tail;
+
+
 	@Override
 	public void addFirst(Object o) {
-		//TODO
+		Node n = new Node(o, head);
+		head = n;
+		if(size == 0) tail = n;
+		size++;
 	}
 
 	@Override
 	public void addLast(Object o) {
-		//TODO
+		Node n = new Node(o, null);
+		tail.setNext(n);
+		tail = n;
+		if(size == 0) head = n;
+		size++;
 	}
 
 	@Override
