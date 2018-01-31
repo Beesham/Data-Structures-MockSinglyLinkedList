@@ -1,8 +1,6 @@
 package stack;
 
 import list.SinglyLinkedList;
-
-import java.util.Arrays;
 import java.util.EmptyStackException;
 
 /**
@@ -30,13 +28,8 @@ public class Stack<E> implements StackADT{
      * @param object object to be added to top of stack
      */
     public void push(Object object) throws Exception {
-        if(stackCount != sizeOfStackArray) {
-            list.addFirst(object);
-            stackCount++;
-        }else{
-            expandArray();
-            push(object);
-        }
+        list.addFirst(object);
+        stackCount++;
     }
 
     /**
@@ -47,9 +40,7 @@ public class Stack<E> implements StackADT{
         if(stackCount == 0) {
             throw new EmptyStackException();
         }else{
-            E o = array[--stackCount];
-            array[stackCount] = null;
-            return o;
+            return (E) list.getFirst();
         }
     }
 
@@ -61,7 +52,7 @@ public class Stack<E> implements StackADT{
         if(stackCount == 0) {
             throw new EmptyStackException();
         }else{
-            return array[stackCount - 1];
+            return (E) list.getFirst();
         }
     }
 
@@ -84,11 +75,11 @@ public class Stack<E> implements StackADT{
     /**
      * Expands the size of the array as Stack needs
      */
-    private void expandArray() {
+   /* private void expandArray() {
         sizeOfStackArray = sizeOfStackArray + INIT_SIZE_OF_ARRAY;
         E[] newArray = Arrays.copyOf(array, sizeOfStackArray);
         array = (E[]) new Object[sizeOfStackArray];
         array = Arrays.copyOf(newArray, sizeOfStackArray);
-    }
+    }*/
 
 }
