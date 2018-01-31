@@ -15,7 +15,25 @@ public class Tester {
 		list.addLast("a");
 		list.addLast("m");
 
+		try {
+			System.out.print(list.removeFirst());
+			System.out.print(list.removeFirst());
+			System.out.print(list.removeFirst());
+			System.out.print(list.removeFirst());
+			System.out.print(list.removeFirst());
+			System.out.print(list.removeFirst());
+			System.out.print(list.removeFirst());
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 
+		list.addFirst("B");
+		list.addLast("e");
+		list.addLast("e");
+		list.addLast("s");
+		list.addLast("h");
+		list.addLast("a");
+		list.addLast("m");
 
 		System.out.println(list.getFirst() + " = B");
 		System.out.println(list.getLast() + " = m");

@@ -39,6 +39,7 @@ public class Stack<E> implements StackADT{
             throw new EmptyStackException();
         }else{
             try {
+                stackCount--;
                 return (E) list.removeFirst();
             } catch (Exception e) {
                 e.printStackTrace();
