@@ -1,3 +1,5 @@
+package list;
+
 public class Node<E> {
 
 	private Object o;

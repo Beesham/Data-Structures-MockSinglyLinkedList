@@ -1,3 +1,5 @@
+package list;
+
 public class SinglyLinkedList<E> implements LinkedListADT {
 
 	/*

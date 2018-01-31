@@ -1,3 +1,5 @@
+package list;
+
 public interface LinkedListADT<E> {
 	void addFirst(E o);
 	void addLast(E o);

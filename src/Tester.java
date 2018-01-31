@@ -1,3 +1,5 @@
+import list.SinglyLinkedList;
+
 public class Tester {
 	public static void main(String[] args) {
 		SinglyLinkedList<String> list = new SinglyLinkedList<>();
