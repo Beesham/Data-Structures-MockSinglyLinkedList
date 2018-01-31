@@ -5,16 +5,27 @@ public class Tester {
 		list.addFirst("B");
 		list.addLast("e");
 		list.addLast("e");
+		list.addLast("s");
+		list.addLast("h");
+		list.addLast("a");
+		list.addLast("m");
 
-		System.out.println(list.getFirst());
-		System.out.println(list.getLast());
+		System.out.println(list.getFirst() + " = B");
+		System.out.println(list.getLast() + " = m");
 		try {
-			System.out.println(list.removeFirst());
+			System.out.println(list.removeFirst() + " = B");
 		} catch (Exception e) {
 			e.printStackTrace();
 			System.out.println("Empty list");
 		}
-		System.out.println(list.getFirst());
+		System.out.println(list.getFirst() + " = e");
+		try {
+			System.out.println(list.removeLast() + " = m");
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+
+		System.out.println(list.getLast() + " = a");
 		System.out.println(list.size());
 	}
 }
