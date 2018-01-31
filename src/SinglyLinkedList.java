@@ -45,14 +45,12 @@ public class SinglyLinkedList<E> implements LinkedListADT {
 
 	@Override
 	public Object getFirst() {
-		//TODO
-		return null;
+		return head.getO();
 	}
 
 	@Override
 	public Object getLast() {
-		//TODO
-		return null;
+		return tail.getO();
 	}
 
 	@Override
