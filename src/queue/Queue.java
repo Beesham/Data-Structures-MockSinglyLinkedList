@@ -6,20 +6,20 @@ public class Queue<E> {
 
 	private SinglyLinkedList list;
 
-	private int size;
-
-	public void enqueue(Object o) {
-		//TODO
+	public Queue() {
+		list = new SinglyLinkedList();
 	}
 
-	public Object dequeue() {
-		//TODO
-		return null;
+	public void enqueue(E o) {
+		list.addLast(o);
+	}
+
+	public Object dequeue() throws Exception {
+		return list.removeFirst();
 	}
 
 	public Object front() {
-		//TODO
-		return null;
+		return list.getFirst();
 	}
 
 	/**

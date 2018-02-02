@@ -1,10 +1,55 @@
 import list.SinglyLinkedList;
+import queue.Queue;
 import stack.Stack;
 
 import java.util.EmptyStackException;
 
 public class Tester {
 	public static void main(String[] args) {
+
+		testQueue();
+		//testLinkedList();
+		//balanceBracketsCheck();
+	}
+
+	private static void testQueue() {
+		Queue<String> queue = new Queue<String>();
+		queue.enqueue("B");
+		queue.enqueue("e");
+		queue.enqueue("e");
+		queue.enqueue("s");
+		queue.enqueue("h");
+		queue.enqueue("a");
+		queue.enqueue("m");
+
+		System.out.println(queue.size() + " = 7");
+		System.out.println(queue.isEmpty() + " = false");
+
+		try {
+			System.out.println(queue.dequeue() + " = B");
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+
+		System.out.println(queue.front() + " = e");
+		System.out.println(queue.size() + " = 6");
+
+		try {
+			System.out.println(queue.dequeue() + " = e");
+			System.out.println(queue.dequeue() + " = e");
+			System.out.println(queue.dequeue() + " = s");
+			System.out.println(queue.dequeue() + " = h");
+			System.out.println(queue.dequeue() + " = a");
+			System.out.println(queue.dequeue() + " = m");
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+
+		System.out.println(queue.size() + " = 0");
+		System.out.println(queue.isEmpty() + " = true");
+	}
+
+	private static void testLinkedList() {
 		SinglyLinkedList<String> list = new SinglyLinkedList<>();
 
 		list.addFirst("B");
@@ -53,7 +98,6 @@ public class Tester {
 		System.out.println(list.getLast() + " = a");
 		System.out.println(list.size());
 
-		balanceBracketsCheck();
 	}
 
 	private static void balanceBracketsCheck() {

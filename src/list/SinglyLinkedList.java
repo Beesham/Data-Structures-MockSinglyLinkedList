@@ -29,7 +29,7 @@ public class SinglyLinkedList<E> implements LinkedListADT {
 	@Override
 	public void addLast(Object o) {
 		Node n = new Node(o, null);
-		tail.setNext(n);
+		if (tail != null) tail.setNext(n);
 		tail = n;
 		if(size == 0) head = n;
 		size++;
