@@ -3,11 +3,13 @@ import queue.Queue;
 import stack.Stack;
 
 import java.util.EmptyStackException;
+import java.util.Scanner;
 
 public class Tester {
 	public static void main(String[] args) {
 
-		testQueue();
+		printer();
+		//testQueue();
 		//testLinkedList();
 		//balanceBracketsCheck();
 	}
@@ -98,6 +100,33 @@ public class Tester {
 		System.out.println(list.getLast() + " = a");
 		System.out.println(list.size());
 
+	}
+
+	private static void printer() {
+		Scanner in = new Scanner(System.in);
+		Queue<Integer> queue = new Queue<>();
+
+		System.out.println("Enter numbers to send to the printer, Q to start printing,");
+
+		Integer i;
+		String c;
+		do {
+			c = in.next();
+			if(c.equals("q") || c.equals("Q")) break;
+			queue.enqueue(Integer.parseInt(c));
+		} while(true);
+
+		while(!queue.isEmpty()) {
+			try {
+				System.out.println(queue.dequeue());
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
+
+		if(queue.isEmpty()) {
+			System.out.println("The queue is empty");
+		}
 	}
 
 	private static void balanceBracketsCheck() {
