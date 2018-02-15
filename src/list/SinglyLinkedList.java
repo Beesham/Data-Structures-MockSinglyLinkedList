@@ -1,5 +1,9 @@
 package list;
 
+/**
+ * Singly Linked list implementation
+ * @param <E>
+ */
 public class SinglyLinkedList<E> implements LinkedListADT {
 
 	/*
@@ -45,7 +49,7 @@ public class SinglyLinkedList<E> implements LinkedListADT {
 		return n.getO();
 	}
 
-	//O(n)
+	//O(1)
 	@Override
 	public Object removeLast() throws Exception {
 		if(head == null) throw new Exception("Empty list");
